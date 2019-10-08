@@ -1,21 +1,46 @@
-<html>
-    <head>
+<!doctype html>
+<html lang="en">
+  <head>
 
-        <script src ="index.js"> </script>
-        <script src="env.js"> </script>
-    </head>
-    <body>
-        <h1> BlogAPI GUI - LOGIN </h1>
-        
-        <form>
-            <label>Username</label>
-            <input type="text" id="username">
-            <br>
-            <label>Password</label>
-            <input type="password" id="password">
-            <br>
-            <input type="button" id="btnLogin" value="Login">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Registro y Login para Blog API">
+    <meta name="author" content="Wilson Lopez">
+    <link rel="icon" href="img/favicon.ico">
 
-        </form>
-    </body>
+    <script src ="js/index.js"> </script>
+    <script src="js/env.js"> </script>
+   
+
+    <title>Signin Blog API</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/signin.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <form class="form-signin">
+      <img class="mb-4" src="img/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Favor de Iniciar</h1>
+      <label for="inputEmail" class="sr-only">Correo</label>
+      <input type="text" id="username" class="form-control" placeholder="Correo" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="password" class="form-control" placeholder="Contraseña" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Recuerdame
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="button" id="btnLogin" value="Login" >Ingresar</button>
+            <!-- Register -->
+            <p>No estás registrado?
+                <a href="register.html">Registrate Aquí</a>
+              </p>
+      <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+    </form>
+
+  </body>
 </html>
