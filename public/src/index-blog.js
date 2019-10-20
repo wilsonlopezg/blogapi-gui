@@ -9,7 +9,7 @@ function loginr(){
         password: password
     };
 
-    console.log(data);
+    //console.log(data);
 
     fetch(`${API_PACH}/login`, {
         method: 'POST', // or 'PUT'
@@ -19,7 +19,11 @@ function loginr(){
         }
       }).then(res => res.json())
       .catch(error => console.error('Error:', error))
-      .then(response => console.log('Success:', response));
+      .then(response => {
+        localStorage.setItem('token', JSON.stringify(response));
+        window.location.href="mostrarPost.html";
+        
+      } );
 }
 
 window.onload = function(){
