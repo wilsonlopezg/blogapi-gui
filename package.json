@@ -1,8 +1,8 @@
 {
-  "name": "blogapi-gui",
+  "name": "app",
   "version": "1.0.0",
   "description": "Blog API - Gui",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --mode development --port 3000 --hot --host 0.0.0.0 --content-base public/",
@@ -13,25 +13,27 @@
     "url": "git+https://github.com/wilsonlopezg/blogapi-gui.git"
   },
   "author": "Wilson Lopez G.",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/wilsonlopezg/blogapi-gui/issues"
   },
   "homepage": "https://github.com/wilsonlopezg/blogapi-gui#readme",
   "dependencies": {
+    "bootstrap": "^4.3.1",
+    "lodash": "^4.17.15",
     "moment": "^2.24.0"
-    
   },
   "devDependencies": {
-    "express": "^4.17.1",
-    "webpack": "^4.41.2",
-    "webpack-dev-middleware": "^3.7.2",
     "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.6.3",
     "babel-loader": "^8.0.6",
     "core-js": "^3.3.2",
+    "express": "^4.17.1",
+    "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
+    "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.8.2"
-  }
+  },
+  "keywords": []
 }

@@ -3,7 +3,7 @@ export default class Router {
     routes = undefined;
     rootElem = undefined;
 
-    constructor(element, routes){
+    constructor(element, routes) {
         try {
             if (!routes) {
                 throw 'error: routes param is requiered';
@@ -12,7 +12,7 @@ export default class Router {
             this.rootElem = document.getElementById(element);
             this.init();
         } catch (e) {
-            console.error(e);   
+            console.error(e);
         }
     }
 
@@ -21,20 +21,20 @@ export default class Router {
         this.hasChanged();
     }
 
-    hasChanged(){
+    hasChanged() {
         if (window.location.hash.length > 0) {
             for (var i = 0, length = this.routes.length; i < length; i++) {
                 var route = this.routes[i];
-                if(route.isActiveRoute(window.location.hash.substr(1))) {
+                if (route.isActiveRoute(window.location.hash.substr(1))) {
                     this.goToRoute(route);
                     break;
                 }
             }
         } else {
-           
+
             for (var i = 0, length = this.routes.length; i < length; i++) {
                 var route = this.routes[i];
-                if(route.default) {
+                if (route.default) {
                     this.goToRoute(route);
                     break;
                 }
@@ -43,7 +43,7 @@ export default class Router {
     }
 
     goToRoute(route) {
-        route.process( res => {
+        route.process(res => {
             this.rootElem.innerHTML = res;
 
             var data = {
@@ -53,8 +53,8 @@ export default class Router {
             var event = new CustomEvent('route_changed', { detail: data });
             document.dispatchEvent(event);
 
-            route.onMount(con => { 
-                if (con !== undefined){
+            route.onMount(con => {
+                if (con !== undefined) {
                     this.rootElem.innerHTML = con;
                 }
             });

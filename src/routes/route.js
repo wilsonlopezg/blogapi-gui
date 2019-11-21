@@ -8,25 +8,28 @@ export default class Route {
 
     constructor(name, params) {
         this.name = name;
-        this.params = params;  
+        this.params = params;
         this.htmlName = params.htmlName;
         this.default = params.default;
-        if (params.content !== undefined){
+        if (params.content !== undefined) {
             this.content = params.content;
-        } 
+        }
     }
 
     isActiveRoute(hashedPath) {
-        return hashedPath.replace('#', '') === this.name; 
+        let hash = hashedPath.replace('#', '');
+        if (hashedPath.indexOf('/') !== -1)
+            hash = hash.substring(0, hashedPath.indexOf('/'));
+        return hash === this.name;
     }
 
     process(cb) {
 
-        if (this.content !== undefined){
+        if (this.content !== undefined) {
             cb(this.content);
         } else {
             var url = this.htmlName;
-            
+
             fetch(url)
                 .then(res => res.text())
                 .then(res => {
@@ -38,7 +41,7 @@ export default class Route {
     }
 
     onMount(cb) {
-        if (this.onMountCb !== undefined){
+        if (this.onMountCb !== undefined) {
             this.onMountCb(cb)
         }
     }
