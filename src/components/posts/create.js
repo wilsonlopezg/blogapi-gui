@@ -1,4 +1,4 @@
-import Route from '../../libs/route';
+import Route from '../../routes/route';
 
 class CreatePost extends Route {
 

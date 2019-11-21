@@ -1,5 +1,5 @@
-import Request from './Request'
-import createPost from '../components/Posts/create';
+import Request from './request'
+//import createPost from '../components/posts/create';
 
 export default class Store {
 
