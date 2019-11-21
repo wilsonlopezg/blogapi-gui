@@ -6,3 +6,6 @@ $ npm install
 
 # Run Dev App.
 $ npm run dev
+
+# Start App
+$ node server.js
